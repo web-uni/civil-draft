@@ -56,7 +56,7 @@ let PYTHON_CMD;
 try { PYTHON_CMD = getPython(); }
 catch (e) { console.error(e.message); process.exit(1); }
 
-const PYTHON_SCRIPT = path.join(__dirname, '..', 'python', 'generate_pdf.py');
+const PYTHON_SCRIPT = path.join(__dirname, 'python', 'generate_pdf.py');
 
 app.post('/api/upload', (req, res) => {
     upload.single('file')(req, res, (multerErr) => {
