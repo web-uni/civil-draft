@@ -216,7 +216,7 @@ export default function UploadFile() {
         formData.append('drawing_info', JSON.stringify(drawingInfo));
         const fakeTimer = setInterval(() => setProgress(p => p < 85 ? p + Math.random() * 3.5 : p), 700);
         try {
-            const res = await axios.post('https://civil-draft.onrender.com/api/upload', formData, {
+            const res = await axios.post('http://localhost:5000/api/upload', formData, {
                 responseType: 'blob',
                 onUploadProgress: e => setProgress(Math.round((e.loaded / e.total) * 20)),
             });
